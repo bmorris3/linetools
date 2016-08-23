@@ -1,4 +1,4 @@
-from __future__ import print_function, absolute_import, division, unicode_literals
+
 
 import numpy as np
 import copy
@@ -143,7 +143,7 @@ def set_llist(llist, in_dict=None, sort_by='wrest'):
     if in_dict is None:
         in_dict = dict(Lists=[])
 
-    if isinstance(llist,basestring): # Set line list from a file
+    if isinstance(llist,str): # Set line list from a file
         in_dict['List'] = llist
         in_dict['Lists'].append(llist)
         if llist == 'None':
@@ -201,9 +201,9 @@ def read_spec(ispec, exten=None, norm=True, **kwargs):
     from linetools.spectra import utils as ltsu
     from astropy.utils.misc import isiterable
     #
-    if isinstance(ispec,basestring):
+    if isinstance(ispec,str):
         spec_fil = ispec
-        if 'rsp_kwargs' in kwargs.keys():
+        if 'rsp_kwargs' in list(kwargs.keys()):
             spec = lsx.XSpectrum1D.from_file(spec_fil, exten=exten, **kwargs['rsp_kwargs'])
         else:
             spec = lsx.XSpectrum1D.from_file(spec_fil, exten=exten)

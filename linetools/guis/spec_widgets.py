@@ -1,6 +1,6 @@
 """ Module for spec widgets
 """
-from __future__ import print_function, absolute_import, division, unicode_literals
+
 
 
 import numpy as np
@@ -77,7 +77,7 @@ class ExamineSpecWidget(QtGui.QWidget):
         self.parent = parent
 
         # determine the filename (if any)
-        if isinstance(ispec, (str, basestring)):
+        if isinstance(ispec, str):
             filename = ispec
         else:
             filename = None

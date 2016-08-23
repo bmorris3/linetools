@@ -1,6 +1,6 @@
 """ Module for XSpecGui
 """
-from __future__ import print_function, absolute_import, division, unicode_literals
+
 
 import sys
 from PyQt4 import QtGui
@@ -120,7 +120,7 @@ class XSpecGui(QtGui.QMainWindow):
 def main(args, **kwargs):
     from linetools.spectra.xspectrum1d import XSpectrum1D
 
-    if not isinstance(args,(XSpectrum1D,tuple,basestring)):
+    if not isinstance(args,(XSpectrum1D,tuple,str)):
         raise IOError("Bad input")
     # Run
     app = QtGui.QApplication(sys.argv)
